@@ -1,5 +1,5 @@
 import { VFC } from 'react'
-import { Layout } from '../components/layout'
+import { Layout } from '../components/Layout'
 import { LocalStateA } from '../components/LocalStateA'
 
 const LocalStatePageA: VFC = () => {

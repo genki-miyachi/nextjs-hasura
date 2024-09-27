@@ -9,7 +9,7 @@ import {
   GetUserIdsQuery,
   Users,
 } from '../../types/generated/graphql'
-import { Layout } from '../../components/layout'
+import { Layout } from '../../components/Layout'
 interface Props {
   user: {
     __typename?: 'users'

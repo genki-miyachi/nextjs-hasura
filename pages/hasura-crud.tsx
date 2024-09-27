@@ -13,7 +13,7 @@ import {
   DeleteUserMutation,
   DeleteUserDocument,
 } from '../types/generated/graphql'
-import { Layout } from '../components/layout'
+import { Layout } from '../components/Layout'
 import { UserItem } from '../components/UserItem'
 
 const HasuraCRUD: VFC = () => {

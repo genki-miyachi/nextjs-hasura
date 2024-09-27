@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useQuery } from '@apollo/client'
 import { GET_USERS_LOCAL } from '../queries/queries'
 import { GetUsersQuery } from '../types/generated/graphql'
-import { Layout } from '../components/layout'
+import { Layout } from '../components/Layout'
 
 const FetchSub: VFC = () => {
   const { data } = useQuery<GetUsersQuery>(GET_USERS_LOCAL)
