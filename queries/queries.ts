@@ -5,6 +5,7 @@ export const GET_USERS = gql`
     users(order_by: { created_at: desc }) {
       id
       name
+      created_at
       profile_users {
         profile {
           id
@@ -20,6 +21,7 @@ export const GET_USERS_LOCAL = gql`
     users(order_by: { created_at: desc }) @client {
       id
       name
+      created_at
       profile_users {
         profile {
           id
@@ -43,6 +45,7 @@ export const GET_USER_BY_ID = gql`
     users_by_pk(id: $id) {
       id
       name
+      created_at
     }
   }
 `
@@ -70,9 +73,9 @@ export const DELETE_USER = gql`
 export const UPDATE_USER = gql`
   mutation UpdateUser($id: uuid!, $name: String!) {
     update_users_by_pk(pk_columns: { id: $id }, _set: { name: $name }) {
-      created_at
       id
       name
+      created_at
     }
   }
 `

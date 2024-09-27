@@ -1437,7 +1437,7 @@ export type Uuid_Comparison_Exp = {
 export type GetUsersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetUsersQuery = { __typename?: 'query_root', users: Array<{ __typename?: 'users', id: any, name: string, profile_users: Array<{ __typename?: 'profile_users', profile: { __typename?: 'profiles', id: any, nickname: string } }> }> };
+export type GetUsersQuery = { __typename?: 'query_root', users: Array<{ __typename?: 'users', id: any, name: string, created_at: any, profile_users: Array<{ __typename?: 'profile_users', profile: { __typename?: 'profiles', id: any, nickname: string } }> }> };
 
 export type GetUerIdsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -1449,7 +1449,7 @@ export type GetUserByIdQueryVariables = Exact<{
 }>;
 
 
-export type GetUserByIdQuery = { __typename?: 'query_root', users_by_pk?: { __typename?: 'users', id: any, name: string } | null };
+export type GetUserByIdQuery = { __typename?: 'query_root', users_by_pk?: { __typename?: 'users', id: any, name: string, created_at: any } | null };
 
 export type CreateUserMutationVariables = Exact<{
   name: Scalars['String']['input'];
@@ -1471,7 +1471,7 @@ export type UpdateUserMutationVariables = Exact<{
 }>;
 
 
-export type UpdateUserMutation = { __typename?: 'mutation_root', update_users_by_pk?: { __typename?: 'users', created_at: any, id: any, name: string } | null };
+export type UpdateUserMutation = { __typename?: 'mutation_root', update_users_by_pk?: { __typename?: 'users', id: any, name: string, created_at: any } | null };
 
 
 export const GetUsersDocument = gql`
@@ -1479,6 +1479,7 @@ export const GetUsersDocument = gql`
   users(order_by: {created_at: desc}) {
     id
     name
+    created_at
     profile_users {
       profile {
         id
@@ -1564,6 +1565,7 @@ export const GetUserByIdDocument = gql`
   users_by_pk(id: $id) {
     id
     name
+    created_at
   }
 }
     `;
@@ -1673,9 +1675,9 @@ export type DeleteUserMutationOptions = Apollo.BaseMutationOptions<DeleteUserMut
 export const UpdateUserDocument = gql`
     mutation UpdateUser($id: uuid!, $name: String!) {
   update_users_by_pk(pk_columns: {id: $id}, _set: {name: $name}) {
-    created_at
     id
     name
+    created_at
   }
 }
     `;
