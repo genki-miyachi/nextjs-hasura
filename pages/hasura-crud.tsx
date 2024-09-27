@@ -14,7 +14,7 @@ import {
   DeleteUserDocument,
 } from '../types/generated/graphql'
 import { Layout } from '../components/layout'
-import { UserItem } from '../components/userItem'
+import { UserItem } from '../components/UserItem'
 
 const HasuraCRUD: VFC = () => {
   const initUser = { id: '', name: '' }
