@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--openssl-legacy-provider' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --env=jsdom --verbose",
+    "test": "NODE_OPTIONS='--openssl-legacy-provider' jest --env=jsdom --verbose",
     "gen-types": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
