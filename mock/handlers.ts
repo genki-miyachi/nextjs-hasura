@@ -7,41 +7,41 @@ export const handlers = [
         users: [
           {
             __typename: 'users',
-            id: '550e8400-e29b-41d4-a716-446655440000',
+            id: 'b6137849-7f1d-c2db-e609-22056fb86db3',
             name: 'Test user A',
-            created_at: '2022-01-15T09:30:00Z',
+            created_at: '2021-01-13T18:06:46.412969+00:00',
           },
           {
             __typename: 'users',
-            id: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
+            id: '2b07950f-9959-1bc7-834d-5656e4aeaac2',
             name: 'Test user B',
-            created_at: '2023-04-22T14:45:00Z',
+            created_at: '2021-02-13T18:06:46.412969+00:00',
           },
           {
             __typename: 'users',
-            id: '6ba7b810-9dad-11d1-80b4-00c04fd430c8',
+            id: '7fe58619-10ec-5239-6f43-1da15a634aba',
             name: 'Test user C',
-            created_at: '2023-06-03T18:20:00Z',
+            created_at: '2021-03-13T18:06:46.412969+00:00',
           },
         ],
       }),
     )
   }),
-  graphql.query('GetUsers', (req, res, ctx) => {
+  graphql.query('GetUserIds', (req, res, ctx) => {
     return res(
       ctx.data({
         users: [
           {
             __typename: 'users',
-            id: '550e8400-e29b-41d4-a716-446655440000',
+            id: 'b6137849-7f1d-c2db-e609-22056fb86db3',
           },
           {
             __typename: 'users',
-            id: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
+            id: '2b07950f-9959-1bc7-834d-5656e4aeaac2',
           },
           {
             __typename: 'users',
-            id: '6ba7b810-9dad-11d1-80b4-00c04fd430c8',
+            id: '7fe58619-10ec-5239-6f43-1da15a634aba',
           },
         ],
       }),
@@ -49,40 +49,38 @@ export const handlers = [
   }),
   graphql.query('GetUserById', (req, res, ctx) => {
     const { id } = req.variables
-    if (id === '550e8400-e29b-41d4-a716-446655440000') {
+    if (id === 'b6137849-7f1d-c2db-e609-22056fb86db3') {
       return res(
         ctx.data({
           users_by_pk: {
             __typename: 'users',
-            id: '550e8400-e29b-41d4-a716-446655440000',
+            id: 'b6137849-7f1d-c2db-e609-22056fb86db3',
             name: 'Test user A',
-            created_at: '2022-01-15T09:30:00Z',
+            created_at: '2021-01-13T18:06:46.412969+00:00',
           },
         }),
       )
     }
-
-    if (id === '550e8400-e29b-41d4-a716-446655440000') {
+    if (id === '2b07950f-9959-1bc7-834d-5656e4aeaac2') {
       return res(
         ctx.data({
           users_by_pk: {
             __typename: 'users',
-            id: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
+            id: '2b07950f-9959-1bc7-834d-5656e4aeaac2',
             name: 'Test user B',
-            created_at: '2023-04-22T14:45:00Z',
+            created_at: '2021-02-13T18:06:46.412969+00:00',
           },
         }),
       )
     }
-
-    if (id === '6ba7b810-9dad-11d1-80b4-00c04fd430c8') {
+    if (id === '7fe58619-10ec-5239-6f43-1da15a634aba') {
       return res(
         ctx.data({
           users_by_pk: {
             __typename: 'users',
-            id: '6ba7b810-9dad-11d1-80b4-00c04fd430c8',
+            id: '7fe58619-10ec-5239-6f43-1da15a634aba',
             name: 'Test user C',
-            created_at: '2023-06-03T18:20:00Z',
+            created_at: '2021-03-13T18:06:46.412969+00:00',
           },
         }),
       )

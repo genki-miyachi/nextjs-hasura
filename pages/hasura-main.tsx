@@ -7,10 +7,8 @@ import { Layout } from '../components/Layout'
 
 const FetchMain: VFC = () => {
   const { data, error } = useQuery<GetUsersQuery>(GET_USERS, {
-    // fetchPolicy: 'network-only',
-    fetchPolicy: 'cache-and-network',
-    // fetchPolicy: 'cache-first',
-    // fetchPolicy: 'no-cache',
+    fetchPolicy: 'network-only',
+    // nextFetchPolicy: 'cache-and-network',
   })
 
   if (error) {
@@ -24,14 +22,11 @@ const FetchMain: VFC = () => {
   return (
     <Layout title="Hasura fetchPolicy">
       <p className="mb-6 font-bold">Hasura main page</p>
-      {console.log(data)}
-      {data?.users.map((user, index) => {
-        return (
-          <p className="my-1" key={index}>
-            {user.name}
-          </p>
-        )
-      })}
+      {data?.users.map((user) => (
+        <p className="my-1" key={user.id}>
+          {user.name}
+        </p>
+      ))}
       <Link href="/hasura-sub">
         <a className="mt-6">Next</a>
       </Link>
