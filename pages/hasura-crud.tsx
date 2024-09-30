@@ -20,7 +20,7 @@ const HasuraCRUD: VFC = () => {
   const initUser = { id: '', name: '' }
   const [editedUser, setEditedUser] = useState(initUser)
   const { data, error } = useQuery<GetUsersQuery>(GET_USERS, {
-    fetchPolicy: 'cache-and-network',
+    fetchPolicy: 'network-only',
   })
 
   const [update_users_by_pk] = useMutation<UpdateUserMutation>(UPDATE_USER)
